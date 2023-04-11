@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.yandex.practicum.catsgram.model.User;
+import ru.yandex.practicum.catsgram.modelSchema.User;
 import ru.yandex.practicum.catsgram.service.UserService;
 
 import java.util.Optional;

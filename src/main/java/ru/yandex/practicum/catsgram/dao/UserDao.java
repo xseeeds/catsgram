@@ -1,6 +1,6 @@
 package ru.yandex.practicum.catsgram.dao;
 
-import ru.yandex.practicum.catsgram.model.User;
+import ru.yandex.practicum.catsgram.modelSchema.User;
 
 import java.util.Optional;
 

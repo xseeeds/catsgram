@@ -1,7 +1,7 @@
 package ru.yandex.practicum.catsgram.service;
 
 import org.springframework.stereotype.Service;
-import ru.yandex.practicum.catsgram.model.Post;
+import ru.yandex.practicum.catsgram.modelSchema.Post;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.catsgram.dao.UserDao;
-import ru.yandex.practicum.catsgram.model.User;
+import ru.yandex.practicum.catsgram.modelSchema.User;
 
 import java.util.Optional;
 
