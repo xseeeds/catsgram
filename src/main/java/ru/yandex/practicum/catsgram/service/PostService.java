@@ -119,10 +119,10 @@ public class PostService {
                 .stream()
                 .map(posts::get)
                 .filter(Objects::nonNull)
-                .filter(post -> !post.getCreationDate().isAfter(to.atStartOfDay(ZoneId.systemDefault()).toInstant())
-                                & !post.getCreationDate().isBefore(from.atStartOfDay(ZoneId.systemDefault()).toInstant())
-//                        Отрицая, он становится endDate или before.isAfter
+                .filter(post -> !post.getCreationDate().isBefore(from.atStartOfDay(ZoneId.systemDefault()).toInstant())
+                                & !post.getCreationDate().isAfter(to.atStartOfDay(ZoneId.systemDefault()).toInstant())
 //                        Отрицая, он становится startDate или after.isBefore
+//                        Отрицая, он становится endDate или before.isAfter
                 )
                 .collect(Collectors.toCollection(ArrayList::new));
     }
@@ -151,6 +151,7 @@ public class PostService {
     private long getNextId() {
         return ++globalId;
     }
+
     private void resetGlobalId() {
         globalId = 0;
     }
