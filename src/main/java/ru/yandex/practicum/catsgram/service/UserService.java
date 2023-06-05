@@ -2,7 +2,7 @@ package ru.yandex.practicum.catsgram.service;
 
 import org.springframework.stereotype.Service;
 import ru.yandex.practicum.catsgram.dao.UserDao;
-import ru.yandex.practicum.catsgram.modelSchema.User;
+import ru.yandex.practicum.catsgram.model.User;
 
 import java.util.Optional;
 
