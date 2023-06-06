@@ -1,5 +1,6 @@
 package ru.yandex.practicum.catsgram.dao.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.catsgram.dao.FollowDao;
@@ -14,17 +15,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class FollowDaoImpl implements FollowDao {
 
     private final JdbcTemplate jdbcTemplate;
     private final UserDao userDao;
     private final PostDao postDao;
-
-    public FollowDaoImpl(JdbcTemplate jdbcTemplate, UserDao userDao, PostDao postDao) {
-        this.jdbcTemplate = jdbcTemplate;
-        this.userDao = userDao;
-        this.postDao = postDao;
-    }
 
     @Override
     public List<Post> getFollowFeed(String userId, int max) {
