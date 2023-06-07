@@ -6,18 +6,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
+@Table(name = "comments")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
-    private String username;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "post_id", referencedColumnName = "id", nullable = false)
+    private Post post;
 
-    private String nickname;
-
+    // ...
 }

@@ -31,7 +31,7 @@ public class PostDaoImpl implements PostDao {
     private Post makePost(User user, ResultSet rs) throws SQLException {
         // используем конструктор, методы ResultSet
         // и готовое значение user
-        Integer id = rs.getInt("id");
+        Long id = rs.getLong("id");
         String description = rs.getString("description");
         String photoUrl = rs.getString("photo_url");
 
