@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.yandex.practicum</groupId>
-	<artifactId>catsgram</artifactId>
+	<artifactId>java-catsgram</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>catsgram</name>
 	<description>Мини-версия популярной соцсети с фотографиями котов.</description>
