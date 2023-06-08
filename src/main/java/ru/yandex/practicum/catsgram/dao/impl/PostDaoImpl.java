@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 @Component
-public class PostDaoImpl implements PostDao {
+public class PostDaoImpl {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -20,7 +20,7 @@ public class PostDaoImpl implements PostDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @Override
+
     public Collection<Post> findPostsByUser(User user) {
 		// метод принимает в виде аргумента строку запроса, преобразователь и аргумент — id пользователя
         String sql = "select * from cat_post where author_id = ? order by creation_date desc";

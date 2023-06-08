@@ -11,6 +11,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "posts")
@@ -30,6 +32,7 @@ public class Post {
     @ToString.Exclude
     private User author; // автор
 
+    private String title;
 
     private String description; // описание
 
@@ -39,5 +42,9 @@ public class Post {
 
     private LocalDate creationDate; // дата создания
 
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "tags", joinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id"))
+    @Column(name = "name")
+    private Set<String> tags = new HashSet<>();
 
 }

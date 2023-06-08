@@ -20,5 +20,9 @@ public class Comment {
     @JoinColumn(name = "post_id", referencedColumnName = "id", nullable = false)
     private Post post;
 
+    @Column(name = "post_id")
+    private Long postId;
+
+    private String text;
     // ...
 }
