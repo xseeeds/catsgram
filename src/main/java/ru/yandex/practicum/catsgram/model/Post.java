@@ -32,6 +32,9 @@ public class Post {
     @ToString.Exclude
     private User author; // автор
 
+    @Column(name = "author_id")
+    private Long authorId;
+
     private String title;
 
     private String description; // описание

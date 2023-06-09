@@ -18,7 +18,7 @@ public class CommentController {
     private final PostService postService;
     private final CommentService commentService;
 
-    @GetMapping
+    /*@GetMapping
     public Collection<PostWithCommentsDto> getPosts() {
         // выгружаем посты (один запрос)
         Map<Long, Post> postMap = postService.findAllPostsWithAuthors()
@@ -52,5 +52,5 @@ public class CommentController {
                 UserDto.of(author.getId(), author.getUsername(), author.getEmail()),
                 commentDtos
         );
-    }
+    }*/
 }

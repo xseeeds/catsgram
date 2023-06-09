@@ -1,27 +1,43 @@
 package ru.yandex.practicum.catsgram.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+@Entity
+@Data
+@Table(name = "follows")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Follow {
-    private String author;
-    private String follower;
 
-    public Follow(String author, String follower) {
-        this.author = author;
-        this.follower = follower;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
 
-    public String getAuthor() {
-        return author;
-    }
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false, unique = true, insertable = false, updatable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonBackReference
+    @ToString.Exclude
+    private User author;
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+    @Column(name = "author_id")
+    private Long authorId;
 
-    public String getFollower() {
-        return follower;
-    }
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "follower_id", referencedColumnName = "id", nullable = false, unique = true, insertable = false, updatable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonBackReference
+    @ToString.Exclude
+    private User follower;
 
-    public void setFollower(String follower) {
-        this.follower = follower;
-    }
+    @Column(name = "follower_id")
+    public Long followerId;
+
 }

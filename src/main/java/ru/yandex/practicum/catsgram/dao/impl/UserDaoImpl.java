@@ -1,3 +1,4 @@
+/*
 package ru.yandex.practicum.catsgram.dao.impl;
 
 import org.slf4j.Logger;
@@ -40,4 +41,4 @@ public class UserDaoImpl implements UserDao {
             return Optional.empty();
         }
     }
-}
+}*/

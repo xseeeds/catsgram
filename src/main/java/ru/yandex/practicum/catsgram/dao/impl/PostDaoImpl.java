@@ -1,8 +1,8 @@
+/*
 package ru.yandex.practicum.catsgram.dao.impl;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import ru.yandex.practicum.catsgram.dao.PostDao;
 import ru.yandex.practicum.catsgram.model.Post;
 import ru.yandex.practicum.catsgram.model.User;
 
@@ -14,7 +14,8 @@ import java.util.Collection;
 @Component
 public class PostDaoImpl {
 
-    private final JdbcTemplate jdbcTemplate;
+    */
+/*private final JdbcTemplate jdbcTemplate;
 
     public PostDaoImpl(JdbcTemplate jdbcTemplate){
         this.jdbcTemplate = jdbcTemplate;
@@ -39,5 +40,6 @@ public class PostDaoImpl {
         LocalDate creationDate = rs.getDate("creation_date").toLocalDate();
 
         return new Post(id, user, description, photoUrl, creationDate);
-    }
-}
+    }*//*
+
+}*/

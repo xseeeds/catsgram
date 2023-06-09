@@ -2,7 +2,7 @@ package ru.yandex.practicum.catsgram.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.yandex.practicum.catsgram.dao.PostDao;
+
 import ru.yandex.practicum.catsgram.dao.PostRepository;
 import ru.yandex.practicum.catsgram.exception.UserNotFoundException;
 import ru.yandex.practicum.catsgram.model.Post;
@@ -22,7 +22,7 @@ public class PostService {
         User user = userService.findUserById(userId)
                 .orElseThrow(() ->new UserNotFoundException("Пользователь с идентификатором " + userId + " не найден."));
 
-        return postRepository.findPostsByAuthor(user);
+        return postRepository.findAllPostsByAuthor(user);
     }
 
     public Collection<Post> findPostsByUser(String authorId, Integer size, String sort) {

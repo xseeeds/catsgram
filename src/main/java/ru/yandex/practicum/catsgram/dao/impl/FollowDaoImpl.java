@@ -1,10 +1,11 @@
+/*
 package ru.yandex.practicum.catsgram.dao.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.catsgram.dao.FollowDao;
-import ru.yandex.practicum.catsgram.dao.PostDao;
+import ru.yandex.practicum.catsgram.dao.PostRepository;
 import ru.yandex.practicum.catsgram.dao.UserDao;
 import ru.yandex.practicum.catsgram.model.Post;
 import ru.yandex.practicum.catsgram.model.User;
@@ -20,12 +21,13 @@ public class FollowDaoImpl implements FollowDao {
 
     private final JdbcTemplate jdbcTemplate;
     private final UserDao userDao;
-    private final PostDao postDao;
+    private final PostRepository postRepository;
 
     @Override
     public List<Post> getFollowFeed(String userId, int max) {
         // получаем все подписки пользователя
-        /*String sql = "select * from cat_follow where follower_id = ?";
+        */
+/*String sql = "select * from cat_follow where follower_id = ?";
         List<Follow> follows = jdbcTemplate.query(sql, (rs, rowNum) -> makeFollow(rs), userId);
 
         // выгружаем авторов на которых подписан пользователь
@@ -38,7 +40,8 @@ public class FollowDaoImpl implements FollowDao {
 
         if(authors.isEmpty()) {
             return Collections.emptyList();
-        }*/
+        }*//*
+
 
         //String sql = "select * from cat_post AS cp join cat_follow AS cf ON cp.author_id = cf.author_id where cf.follower_id = ?";
 
@@ -47,7 +50,7 @@ public class FollowDaoImpl implements FollowDao {
 
         // выгружаем посты полученных выше авторов
         return authors.stream()
-                .map(postDao::findPostsByUser)
+                .map(postRepository::findPostsByUser)
                 .flatMap(Collection::stream)
                 // сортируем от новых к старым
                 .sorted(Comparator.comparing(Post::getCreationDate).reversed())
@@ -60,4 +63,4 @@ public class FollowDaoImpl implements FollowDao {
         return new User(rs.getString("id"), rs.getString("username"), rs.getString("nickname"));
         //return new Follow(rs.getString("author_id"), rs.getString("follower_id"));
     }
-}
+}*/
